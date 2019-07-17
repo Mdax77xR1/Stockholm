@@ -1,7 +1,16 @@
 /////////////////////////////////////////////////////////////////////////
+const fs = require("fs"); 
+const adminprefix = "^";
+const UserBlocked = new Set();
+const jimp = require('jimp');   
 const Discord = require('discord.js');
 const prefix = "^"
 const client = new Discord.Client();
+const hero = new Discord.Client();
+const points = {};
+ const pretty = require('pretty-ms') 
+,ti={}  
+,spee={}; 
 /////////////////////////////////////////////////////////////////////////
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -33,16 +42,16 @@ client.on('ready', () => {
         console.log(`ON ${client.guilds.size} servers.`);
       console.log(`----------------`);
     console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`^Gangs | ^help | Servers: ${client.guilds.size}`,"https://www.twitch.tv/xR1")
+  client.user.setGame(`$help | Servers: ${client.guilds.size}`,"https://www.twitch.tv/xR1")
   client.user.setStatus("dnd")
    
   });
   /////////////////////////////////////////////////////////
   client.on('message' , message => {
   
-    if (message.content === '^help') {
+    if (message.content === '$help') {
                message.react('🤖')
-             let embed = new Discord.RichEmbed()
+             let embedxx = new Discord.RichEmbed()
     
           .setThumbnail(message.author.avatarURL)    
           .addField("**[❖══════【 __General Commands__ 】 ══════❖]**","** **")
@@ -71,14 +80,14 @@ client.on('ready', () => {
     
     
         .setColor('RANDOM')
-      message.author.sendEmbed(embed);
+      message.author.sendEmbed(embedxx);
         }
     });
     //////////////////
     client.on('message' , message => {
   
         if (message.content === '$help') {
-                 let embed1 = new Discord.RichEmbed()
+                 let embed1234 = new Discord.RichEmbed()
         
               .setThumbnail(message.author.avatarURL)        
               .addField("**● $sug**","**【To send Your Suggestion To Suggestions Room | Required channel named #suggestions . .】**")
@@ -95,7 +104,7 @@ client.on('ready', () => {
         
         
             .setColor('RANDOM')
-          message.author.sendEmbed(embed1);
+          message.author.sendEmbed(embed1234);
             }
         });
 
@@ -304,7 +313,7 @@ client.on("message", message => {
 client.on('message', message => {
   
     if(!message.channel.guild) return;
-  if (message.content.startsWith('^ping')) {
+  if (message.content.startsWith('$ping')) {
   if(!message.channel.guild) return;
   var msg = `${Date.now() - message.createdTimestamp}`
   var api = `${Math.round(client.ping)}`
@@ -320,7 +329,6 @@ client.on('message', message => {
   //////////////////////////
   client.on("message", msg => {
   
-    var prefix = "$";
   if(msg.content.startsWith (prefix + "profile")) {
   if(!msg.channel.guild) return msg.reply('**:x: Only for servers sorry.**');         
   const embed = new Discord.RichEmbed();
@@ -381,7 +389,7 @@ client.on('message', message => {
       ///////////////////
       client.on('message', message => {
   
-        if (message.content.startsWith('^help')){
+        if (message.content.startsWith('$help')){
              let meercy = new Discord.RichEmbed()
           .setColor("RANDOM")
           .setDescription("**check your DM / direct messages.**")
@@ -1016,428 +1024,50 @@ client.on("message", async message => {
       }
     });
 ///////////////////////////////////
-client.on('message', message => {
-    if(message.author.bot) return;
-    if(message.channel.type === 'dm') return;
-        if(message.content.startsWith(prefix + 'bc')) {
-         let filter = m => m.author.id === message.author.id;
-     
-     let recembed = new Discord.RichEmbed()
-     .setTitle(`${client.user.username}`)
-     .setDescription(`
-     -=-=-=-=-=-=-=-=-=-=
-     🎖 Broadcast sends to a specific role without embed
-     
-     🏅 Broadcast sends to a specific role with embed
-     
-     📭 Broadcast sends for all members with embed
-     
-     📧 Broadcast sends for all members without embed
-     
-     🔵 Broadcast sends for online members only without embed
-     
-     🔷 Broadcast sends for online members only with embed
-     
-     ❌ To Cancel the process
-     -=-=-=-=-=-=-=-=-=-=
-     `)
-     
-     message.channel.sendEmbed(recembed).then(msg => {
-         msg.react('🎖')
-         .then(() => msg.react('🏅'))
-         .then(() => msg.react('📭'))
-         .then(() =>  msg.react('📧'))
-         .then(() => msg.react('🔵'))
-         .then(() => msg.react('🔷'))
-         .then(() => msg.react('❌'))
-     
-     
-                 let embedmsgFilter = (reaction, user) => reaction.emoji.name === '📭' && user.id === message.author.id;
-     
-                 let normalmsgFilter = (reaction, user) => reaction.emoji.name === '📧' && user.id === message.author.id;
-     
-                 let cancelFilter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
-     
-                 let onlyroleFilter = (reaction, user) => reaction.emoji.name === '🎖' && user.id === message.author.id;8
-     
-                 let onlineonlyFilter = (reaction, user) => reaction.emoji.name === '🔵' && user.id === message.author.id;8
-     
-                 let embedonlineonlyFilter = (reaction, user) => reaction.emoji.name === '🔷' && user.id === message.author.id;8
-     
-                 let embedonlyroleFilter = (reaction, user) => reaction.emoji.name === '🏅' && user.id === message.author.id;8
-     
-                 let embedmsg = msg.createReactionCollector(embedmsgFilter, { time: 0 });
-     
-                 let normalmsg = msg.createReactionCollector(normalmsgFilter, { time: 0 });
-         
-                 let onlyrole = msg.createReactionCollector(onlyroleFilter, { time: 0 });
-     
-                 let embedonlyrole = msg.createReactionCollector(embedonlyroleFilter, { time: 0 });
-     
-                 let onlineonly = msg.createReactionCollector(onlineonlyFilter, { time: 0 });
-                     
-                 let embedonlineonly = msg.createReactionCollector(embedonlineonlyFilter, { time: 0 });
-     
-                 let cancel = msg.createReactionCollector(cancelFilter, { time: 0 });
-     
-     embedonlineonly.on('collect', r => {
-     
-        let msge;
-        message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
-       
-               message.channel.awaitMessages(filter, {
-                 max: 1,
-                 time: 90000,
-                 errors: ['time']
-               })
-               .then(collected => {
-                   collected.first().delete();
-                   msge = collected.first().content;
-                   msg.edit('✅ **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
-                     message.channel.awaitMessages(filter, {
-                       max: 1,
-                       time: 90000,
-                       errors: ['time']
-                     })
-                     .then(collected => {
-                       if(collected.first().content === 'yes') {
-       message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-       
-       
-       message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
-        var bc = new Discord.RichEmbed()
-               .setColor('RANDOM')
-               .setTitle(`:mega: New Broadcast`)
-               .addField('🔰Server🔰', message.guild.name)
-               .addField('🚩Sender🚩', message.author.username)
-               .addField('📜Message📜', `${msge}`)
-               .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
-               .setFooter(client.user.username, client.user.avatarURL);
-               m.send({ embed: bc })
-               m.send(`${m}`)
-               
-           })
-       }})
-       if(collected.first().content === 'no') {
-       message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-       message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
-        var bc = new Discord.RichEmbed()
-               .setColor('RANDOM')
-               .setTitle(`:mega: New Broadcast`)
-               .addField('🔰Server🔰', message.guild.name)
-               .addField('🚩Sender🚩', message.author.username)
-               .addField('📜Message📜', `${msge}`)
-               .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
-               .setFooter(client.user.username, client.user.avatarURL);
-               m.send({ embed: bc })
-               
-           })
-       }
-                     
-       })
-                   })
-               })
-           })
-     
-           
-     onlineonly.on('collect', r => {
-        let msge;
-        message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
-     
-            message.channel.awaitMessages(filter, {
-              max: 1,
-              time: 90000,
-              errors: ['time']
-            })
-            .then(collected => {
-                collected.first().delete();
-                msge = collected.first().content;
-                msg.edit('✅ **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
-                  message.channel.awaitMessages(filter, {
-                    max: 1,
-                    time: 90000,
-                    errors: ['time']
-                  })
-                  .then(collected => {
-     
-                    if(collected.first().content === 'yes') {
-    message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-                   
-     
-    message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
-        m.send(`${msge}`)
-    m.send(`${m}`)      
-           
-        })
-    }
-    if(collected.first().content === 'no') {
-    message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-    message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
-        m.send(`${msge}`)
-                   
-        })}
-    })
-    })
-            })
-        })
-    })
-     
-     embedmsg.on('collect', r => {
-         let msge;
-      message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
-     
-             message.channel.awaitMessages(filter, {
-               max: 1,
-               time: 90000,
-               errors: ['time']
-             })
-             .then(collected => {
-                 collected.first().delete();
-                 msge = collected.first().content;
-                 msg.edit('✅ **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
-                   message.channel.awaitMessages(filter, {
-                     max: 1,
-                     time: 90000,
-                     errors: ['time']
-                   })
-                   .then(collected => {
-                     if(collected.first().content === 'yes') {
-     message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-     
-     
-         message.guild.members.forEach(m => {
-             var bc = new Discord.RichEmbed()
-             .setColor('RANDOM')
-             .setTitle(`:mega: New Broadcast`)
-             .addField('🔰Server🔰', message.guild.name)
-             .addField('🚩Sender🚩', message.author.username)
-             .addField('📜Message📜', `${msge}`)
-             .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
-             .setFooter(client.user.username, client.user.avatarURL);
-             m.send({ embed: bc })
-             m.send(`${m}`)
-             
-         })
-     }})
-     if(collected.first().content === 'no') {
-     message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-         message.guild.members.forEach(m => {
-             var bc = new Discord.RichEmbed()
-             .setColor('RANDOM')
-             .setTitle(`:mega: New Broadcast`)
-             .addField('🔰Server🔰', message.guild.name)
-             .addField('🚩Sender🚩', message.author.username)
-             .addField('📜Message📜', `${msge}`)
-             .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
-             .setFooter(client.user.username, client.user.avatarURL);
-             m.send({ embed: bc })
-             
-         })
-     }
-                   
-     })
-                 })
-             })
-         })
-     
-     
-       
-     
-     
-     
-     normalmsg.on('collect', r => {
-         let msge;
-         message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
-     
-             message.channel.awaitMessages(filter, {
-               max: 1,
-               time: 90000,
-               errors: ['time']
-             })
-             .then(collected => {
-                 collected.first().delete();
-                 msge = collected.first().content;
-                 msg.edit('✅ **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
-                   message.channel.awaitMessages(filter, {
-                     max: 1,
-                     time: 90000,
-                     errors: ['time']
-                   })
-                   .then(collected => {
-     
-                     if(collected.first().content === 'yes') {
-     message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-                     
-     
-         message.guild.members.forEach(m => {
-     m.send(`${msge}`)
-     m.send(`${m}`)      
-             
-         })
-     }
-     if(collected.first().content === 'no') {
-     message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-         message.guild.members.forEach(m => {
-             m.send(`${msge}`)
-                     
-         })}
-     })
-     })
-             })
-         })
-     })
-     
-     onlyrole.on('collect', r => {
-         let msge;
-         let role;
-         message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
-     
-             message.channel.awaitMessages(filter, {
-               max: 1,
-               time: 90000,
-               errors: ['time']
-             })
-     
-             .then(collected => {
-                 collected.first().delete();
-                 msge = collected.first().content;
-                     msg.edit('✅ **| Now Please Write The Role Name**').then(msg => {
-                     message.channel.awaitMessages(filter, {
-                         max: 1,
-                         time: 90000,
-                         errors: ['time']
-                       })
-             
-             .then(collected => {
-                 collected.first().delete();
-                 role = collected.first().content;
-                     let rolecheak = message.guild.roles.find('name', `${role}`)
-                 msg.edit('✅ **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
-                   message.channel.awaitMessages(filter, {
-                     max: 1,
-                     time: 90000,
-                     errors: ['time']
-                   })
-                   .then(collected => {
-     
-                     if(collected.first().content === 'yes') {
-     message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-                     
-     
-                 message.guild.members.filter(m => m.roles.get(rolecheak.id)).forEach(m => {
-     
-     m.send(`${msge}`)
-     m.send(`${m}`)      
-             
-         })
-     }
-     if(collected.first().content === 'no') {
-     message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-             message.guild.members.filter(m => m.roles.get(rolecheak.id)).forEach(m => {
-     
-             m.send(`${msge}`)
-                     
-         })}
-     })
-     })
-             })
-         })
-     })
-     })
-     });
-     
-     
-     
-     embedonlyrole.on('collect', r => {
-         let msge;
-         let role;
-         message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
-     
-             message.channel.awaitMessages(filter, {
-               max: 1,
-               time: 90000,
-               errors: ['time']
-             })
-     
-             .then(collected => {
-                 collected.first().delete();
-                 msge = collected.first().content;
-                     msg.edit('✅ **| Now Please Write The Role Name**').then(msg => {
-                     message.channel.awaitMessages(filter, {
-                         max: 1,
-                         time: 90000,
-                         errors: ['time']
-                       })
-             
-             .then(collected => {
-                 collected.first().delete();
-                 role = collected.first().content;
-                     let rolecheak = message.guild.roles.find('name', `${role}`)
-                 msg.edit('✅ **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
-                   message.channel.awaitMessages(filter, {
-                     max: 1,
-                     time: 90000,
-                     errors: ['time']
-                   })
-                   .then(collected => {
-     
-                     if(collected.first().content === 'yes') {
-     message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-                     
-     
-                         message.guild.members.filter(m => m.roles.get(rolecheak.id)).forEach(m => {
-                             var bc = new Discord.RichEmbed()
-             .setColor('RANDOM')
-             .setTitle(`:mega: New Broadcast`)
-             .addField('🔰Server🔰', message.guild.name)
-             .addField('🚩Sender🚩', message.author.username)
-             .addField('📜Message📜', `${msge}`)
-             .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
-             .setFooter(client.user.username, client.user.avatarURL);
-             m.send({ embed: bc })
-     m.send(`${m}`)      
-             
-         })
-     }
-     if(collected.first().content === 'no') {
-     message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
-     message.guild.members.filter(m => m.roles.get(rolecheak.id)).forEach(m => {
-             var bc = new Discord.RichEmbed()
-             .setColor('RANDOM')
-             .setTitle(`:mega: New Broadcast`)
-             .addField('🔰Server🔰', message.guild.name)
-             .addField('🚩Sender🚩', message.author.username)
-             .addField('📜Message📜', `${msge}`)
-             .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
-             .setFooter(client.user.username, client.user.avatarURL);
-             m.send({ embed: bc })
-             
-                     
-         })}
-     })
-     })
-             })
-         })
-     })
-     })
-     })
-         cancel.on('collect', r => {
-             let cancelembed = new Discord.RichEmbed()
-             .setTitle('Successfully Canceled :x:')
-          message.channel.sendEmbed(cancelembed)
-             embedmsg.stop();
-             normalmsg.stop();
-             onlyrole.stop();
-             embedonlyrole.stop();
-             embedonlineonly.stop()
-             onlineonly.stop()
-             cancel.stop();
-         })
-     })
-        }});
+
         ///////////////////////
-
-
+        client.on('message', message => {
+            if (message.content.startsWith('$O.Neil-info')){
+                const ONeil = "0";
+                 let ONeil = new Discord.RichEmbed()
+                 .setTitle("=== ( O.Neil Gang ) ===")
+                 .addField('Owner Of The Gang :',"IGN :  | Discord : ")
+                 .addField(`Co.Owner OF The Gang : `, "IGN :  | Discord :")
+                 .addField("Count Of Gang Members  :",`__ ${ONeil} __`)
+                 .addField("Faction Name :",``)
+              .setColor("RANDOM")
+              message.channel.sendEmbed(ONeil);
+                }
+            });
+            client.on('message', message => {
+                if (message.content.startsWith('$Stockholm-info')){
+                    const xHu = "16";
+                     let xHu = new Discord.RichEmbed()
+                     .setTitle("=== ( Stockholm Gang ) ===")
+                     .addField('Owner Of The Gang :',"IGN : __ Martinez A.Stockholm __ | Discord : ")            
+                     .addField(`Co.Owner OF The Gang : `, "IGN : __ Arther A.Stockholm __  | Discord : ! Zero 💔#6146")
+                     .addField("Count Of Gang Members  :",`__ ${xHu} __`)
+                     .addField("Names Of Gang Members  :",`
+                     1- Martinez A.Stockholm
+                     2- Arther A.Stockholm
+                     3- Marcos A.Stockholm
+                     4- Guevara A.Stockholm
+                     5- Richard A.Stockholm
+                     6- Edison A.Stockholm
+                     7- Junior A.Stockholm
+                     8- Dmitry A.Stockholm
+                     9- Neymare A.Stockholm
+                     10- Alex A.Stockholm
+                     11- Bartholmew A.Stockholm
+                     12- Hector A.Stockholm
+                     13- Robert A.Stockholm
+                     14- Dife A.Stockholm
+                     15- Hero A.Stockholm`)
+                     .addField("Faction Name :",`__ xHu __`)
+                  .setColor("RANDOM")
+                  message.channel.sendEmbed(xHu);
+                    }
+                });
 ////////////////////////////
 
 client.on('message', async message =>{
