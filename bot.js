@@ -49,7 +49,7 @@ client.on('ready', () => {
   /////////////////////////////////////////////////////////
   client.on('message' , message => {
   
-    if (message.content === '^help') {
+    if (message.content === '$help') {
                message.react('🤖')
              let embedxx = new Discord.RichEmbed()
     
@@ -73,12 +73,6 @@ client.on('ready', () => {
          .addField("**● $unmute**","**【to unmute someone.】**")
          .addField("**● $mvall**","**【to move all to your voice channel.】**")
          .addField("**● $move**","**【to move someone to your voice chanel.】**")
-
-
-    
-    
-    
-    
         .setColor('RANDOM')
       message.author.sendEmbed(embedxx);
         }
@@ -98,11 +92,7 @@ client.on('ready', () => {
             .addField("**● $kv**","**【to kick someone from voice channel.】**")
             .addField("The Stockholm Bot Made By :","<@335484868479811584>")
             .addField("【Works on Heroku premium cloud.】","24/7 online")
-     
-
-        
-        
-        
+  
             .setColor('RANDOM')
           message.author.sendEmbed(embed1234);
             }
@@ -354,7 +344,7 @@ client.on('message', message => {
        .setAuthor(client.user.username,client.user.avatarURL)
        .setThumbnail(client.user.avatarURL)
        .setColor('RANDOM')
-       .setTitle('``xHu & O.Neil BOT`` ')
+       .setTitle('``xHu BOT`` ')
        .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
        .addField('``servers``', [client.guilds.size], true)
        .addField('``channels``' , `[ ${client.channels.size} ]` , true)
@@ -400,7 +390,6 @@ client.on('message', message => {
         });
         ////////////////////////
         client.on('message', message => {
-  
  
             if (message.content.startsWith('$mc')) {
                                    if(!message.channel.guild) return message.reply('** This command only for servers**');
@@ -427,22 +416,14 @@ client.on('message', message => {
                         }
                         
                     });
-///////////////////////////////////////////////////////////////
- 
-/////////////////////////////////////////////////////////////
-
-///////////////////////////////////
-
-        ///////////////////////
 
             client.on('message', message => {
                 if (message.content.startsWith('$Stockholm-info')){
-                    const xHu = "16";
                      let xHu2 = new Discord.RichEmbed()
                      .setTitle("=== ( Stockholm Gang ) ===")
                      .addField('Owner Of The Gang :',"IGN : __ Martinez A.Stockholm __ | Discord : ")            
                      .addField(`Co.Owner OF The Gang : `, "IGN : __ Arther A.Stockholm __  | Discord : ! Zero 💔#6146")
-                     .addField("Count Of Gang Members  :",`__ ${xHu} __`)
+                     .addField("Count Of Gang Members  :",`__ 15 __`)
                      .addField("Names Of Gang Members  :",`
                      1- Martinez A.Stockholm
                      2- Arther A.Stockholm
