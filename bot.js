@@ -1029,14 +1029,14 @@ client.on("message", async message => {
         client.on('message', message => {
             if (message.content.startsWith('$O.Neil-info')){
                 const ONeil = "0";
-                 let ONeil = new Discord.RichEmbed()
+                 let ONeill = new Discord.RichEmbed()
                  .setTitle("=== ( O.Neil Gang ) ===")
                  .addField('Owner Of The Gang :',"IGN :  | Discord : ")
                  .addField(`Co.Owner OF The Gang : `, "IGN :  | Discord :")
                  .addField("Count Of Gang Members  :",`__ ${ONeil} __`)
                  .addField("Faction Name :",``)
               .setColor("RANDOM")
-              message.channel.sendEmbed(ONeil);
+              message.channel.sendEmbed(ONeill);
                 }
             });
             client.on('message', message => {
