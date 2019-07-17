@@ -1436,23 +1436,11 @@ client.on('message', message => {
      })
         }});
         ///////////////////////
-        client.on('message', message => {
-            if (message.content.startsWith('$O.Neil-info')){
-                const ONeil = "0";
-                 let ONeil = new Discord.RichEmbed()
-                 .setTitle("=== ( O.Neil Gang ) ===")
-                 .addField('Owner Of The Gang :',"IGN :  | Discord : ")
-                 .addField(`Co.Owner OF The Gang : `, "IGN :  | Discord :")
-                 .addField("Count Of Gang Members  :",`__ ${ONeil} __`)
-                 .addField("Faction Name :",``)
-              .setColor("RANDOM")
-              message.channel.sendEmbed(ONeil);
-                }
-            });
+
             client.on('message', message => {
                 if (message.content.startsWith('$Stockholm-info')){
                     const xHu = "16";
-                     let xHu = new Discord.RichEmbed()
+                     let xHu1 = new Discord.RichEmbed()
                      .setTitle("=== ( Stockholm Gang ) ===")
                      .addField('Owner Of The Gang :',"IGN : __ Martinez A.Stockholm __ | Discord : ")            
                      .addField(`Co.Owner OF The Gang : `, "IGN : __ Arther A.Stockholm __  | Discord : ! Zero 💔#6146")
@@ -1475,7 +1463,7 @@ client.on('message', message => {
                      15- Hero A.Stockholm`)
                      .addField("Faction Name :",`__ xHu __`)
                   .setColor("RANDOM")
-                  message.channel.sendEmbed(xHu);
+                  message.channel.sendEmbed(xHu1);
                     }
                 });
 ////////////////////////////
