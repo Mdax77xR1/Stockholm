@@ -159,63 +159,7 @@ client.on('ready', () => {
     }
     });
     //////
-    client.on('message', message => {
-        var permissionskick = new Discord.RichEmbed()
-        .setDescription("**You need ` BAN_MEMBERS ` Permission**")
-        .setColor(`#36393e`)
-        
-        var permissionskickv2 = new Discord.RichEmbed()
-        .setTitle("**I should have ` BAN_MEMBERS ` Permission to do that. :x:**")
-        .setColor(`RANDOM`)
-        
-        var mentionplz = new Discord.RichEmbed()
-        .setTitle("**mention someone**")
-        .setColor(`RANDOM`)
-        
-        var reasonplz = new Discord.RichEmbed()
-        .setTitle("**with a reason please.**")
-        .setColor(`RANDOM`)
-        
-        var rolehight = new Discord.RichEmbed()
-        .setTitle("**holy crap, he higher than my role.**")
-        .setColor(`#RANDOM`)
-    
-        var prefix = "^"
-    if (message.author.x5bz) return;
-    if (!message.content.startsWith(prefix)) return;
-    
-    let command = message.content.split(" ")[0];
-    command = command.slice(prefix.length);
-    
-    let args = message.content.split(" ").slice(1);
-    
-    if (command == "ban") {
-                             if(!message.channel.guild) return message.reply('** This command only for servers**');
-                 
-    if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply(permissionskick);
-    if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply(permissionskickv2);
-    let user = message.mentions.users.first();
-    let reason = message.content.split(" ").slice(2).join(" ");
-    if (message.mentions.users.size < 1) return message.reply(mentionplz);
-    if(!reason) return message.reply (reasonplz);
-    if (!message.guild.member(user)
-    .bannable) return message.reply(rolehight);
-    
-    
-    message.guild.member(user).ban(7, user);
-    
-    const banembed = new Discord.RichEmbed()
-    .setAuthor(`BANNED!`, user.displayAvatarURL)
-    .setColor("RANDOM")
-    .setTimestamp()
-    .addField("**User:**",  '**[ ' + `${user.tag}` + ' ]**')
-    .addField("**By:**", '**[ ' + `${message.author.tag}` + ' ]**')
-    .addField("**Reason:**", '**[ ' + `${reason}` + ' ]**')
-    message.channel.send({
-        embed : banembed
-    })
-    }
-    });
+
     //////////////////
     
 client.on("message", message => {
