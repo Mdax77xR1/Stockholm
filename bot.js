@@ -1418,11 +1418,11 @@ client.on('message', message => {
        .addField(' :bust_in_silhouette:  Your Number Is ',`**[ ${member.guild.memberCount} ]:hearts:**`,true)
        .setFooter(member.guild.name, member.guild.iconURL, true)
      .setFooter('Made By : ✈ MdĄx7ź ♛ .#8085 ')
-   .setImage(`https://cdn.discordapp.com/attachments/596421939959169035/601085462865510410/unknown.png`)
+   .setImage(`https://cdn.discordapp.com/attachments/601061050493698079/601425429424898090/unknown.png`)
      .setColor('RANDOM')
    var channel =member.guild.channels.find('name', 'welcome')
    if (!channel) return;
-   channel.send({embeded : embeded});//حقوق مداكس
+   channel.send({embeded});//حقوق مداكس
    });
   //////////////
   client.on("message", async message => {
