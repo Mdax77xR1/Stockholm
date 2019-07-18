@@ -1410,11 +1410,17 @@ client.on('message', message => {
    client.on('guildMemberAdd', member => {
     var embed = new Discord.RichEmbed()
     .setAuthor(member.user.username, member.user.avatarURL)
-    .setThumbnail(member.user.avatarURL)
-    .setTitle(`عضو جديد`)
-    .setDescription(`Welcome to server`)
-    .addField(' 👤  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
-    .setColor('RANDOM')
+     .setThumbnail(member.user.avatarURL)
+   .addField("***UserName.***" ,member.user.username )
+       .setTitle('========= ( New Member !.) ======')
+       .setDescription('Welcome To Our Server , Have a good Time :heart: :rose:')
+       .addField('**Member Id**:', member.user.id, true)
+       .addField('**Member Tag**:', member.user.discriminator, true)
+       .addField('**Account Created in** :', member.user.createdAt, true)
+       .addField(' :bust_in_silhouette:  Your Number Is ',`**[ ${member.guild.memberCount} ]:hearts:**`,true)
+     .setFooter('Made By : ✈ MdĄx7ź ♛ .#8085 ')
+   .setImage(`https://cdn.discordapp.com/attachments/601061050493698079/601425429424898090/unknown.png`)
+     .setColor('RANDOM')
 
 var channel =member.guild.channels.find('name', 'welcome')//حط اسم رووم هنا
 if (!channel) return;
