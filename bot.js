@@ -1428,19 +1428,7 @@ channel.send({embed : embed});
 });
 
 
-client.on('guildMemberRemove', member => {
-    var embed = new Discord.RichEmbed()
-    .setAuthor(member.user.username, member.user.avatarURL)
-    .setThumbnail(member.user.avatarURL)
-    .setTitle(`خرج عضو`)
-    .setDescription(`الى اللقاء...`)
-    .addField('👤   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
-    .setColor('RED')
 
-var channel =member.guild.channels.find('name', 'welcome')//حط اسم رووم هنا
-if (!channel) return;
-channel.send({embed : embed});
-});
   //////////////
   client.on("message", async message => {
     if(message.content.startsWith(prefix + "chinfo")) {//حقوق مداكس
