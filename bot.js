@@ -1406,24 +1406,35 @@ client.on('message', message => {
   
   });
   ///////////////////
-  client.on('guildMemberAdd', member => {
-    var embeded = new Discord.RichEmbed()
-     .setThumbnail(member.user.avatarURL)
-   .addField("***UserName.***" ,member.user.username )
-       .setTitle('========= ( New Member !.) ======')
-       .setDescription('Welcome To Our Server , Have a good Time :heart: :rose:')
-       .addField('**Member Id**:', member.user.id, true)
-       .addField('**Member Tag**:', member.user.discriminator, true)
-       .addField('**Account Created in** :', member.user.createdAt, true)
-       .addField(' :bust_in_silhouette:  Your Number Is ',`**[ ${member.guild.memberCount} ]:hearts:**`,true)
-       .setFooter(member.guild.name, member.guild.iconURL, true)
-     .setFooter('Made By : ✈ MdĄx7ź ♛ .#8085 ')
-   .setImage(`https://cdn.discordapp.com/attachments/601061050493698079/601425429424898090/unknown.png`)
-     .setColor('RANDOM')
-   var channel =member.guild.channels.find('name', 'welcome')
-   if (!channel) return;
-   channel.send({embeded});//حقوق مداكس
-   });
+  
+   client.on('guildMemberAdd', member => {
+    var embed = new Discord.RichEmbed()
+    .setAuthor(member.user.username, member.user.avatarURL)
+    .setThumbnail(member.user.avatarURL)
+    .setTitle(`عضو جديد`)
+    .setDescription(`Welcome to server`)
+    .addField(' 👤  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
+    .setColor('RANDOM')
+
+var channel =member.guild.channels.find('name', 'welcome')//حط اسم رووم هنا
+if (!channel) return;
+channel.send({embed : embed});
+});
+
+
+client.on('guildMemberRemove', member => {
+    var embed = new Discord.RichEmbed()
+    .setAuthor(member.user.username, member.user.avatarURL)
+    .setThumbnail(member.user.avatarURL)
+    .setTitle(`خرج عضو`)
+    .setDescription(`الى اللقاء...`)
+    .addField('👤   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
+    .setColor('RED')
+
+var channel =member.guild.channels.find('name', 'welcome')//حط اسم رووم هنا
+if (!channel) return;
+channel.send({embed : embed});
+});
   //////////////
   client.on("message", async message => {
     if(message.content.startsWith(prefix + "chinfo")) {//حقوق مداكس
