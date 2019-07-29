@@ -54,7 +54,7 @@ client.on('ready', () => {
              let embedxx = new Discord.RichEmbed()
     
           .setThumbnail(message.author.avatarURL)    
-          .addField("**[❖══════【 __General Commands__ 】 ══════❖]**","** **")
+          .addField("**[❖══════【 __General Commands__. 】 ══════❖]**","** **")
          .addField("**● $Stockholm-info**","**【To See Info For Stockholm Gang.】***")
          .addField("**● ^chinfo [Chaneel Name !.]**","**【Room information 】**")
          .addField("**● $members**","**【To See Members Status.】***")
