@@ -1762,7 +1762,17 @@ client.on("message", async message => {
     }
      });
 
-
+      client.on('message', message => {
+  
+        if (message.content.startsWith('$games-list')){
+             let meerc2y = new Discord.RichEmbed()
+          .setColor("RANDOM")
+          .setDescription("**check your DM / direct messages.**")
+             
+             
+          message.channel.sendEmbed(meerc2y);
+            }
+        });
 
 
 
