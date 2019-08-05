@@ -1774,25 +1774,33 @@ client.on("message", async message => {
             }
         });
 
-const ytScraper = require("yt-scraper");
-client.on('message', message => {
-    if (message.content.startsWith('$yt')) {
-    ytScraper.channelInfo("https://www.youtube.com/channel/UC9YuG3ggyuFzLUwfKEevxCw").then(data => {
-        const embed = new Discord.RichEmbed()
-        .setColor("#36393e")
-        .addField(`↬ | Channel ID`, `**${data.id}**`)
-        .addField(`↬ | Channel Name`, `**${data.name}**`)
-        .addField(`↬ | Channel Subscribers`, `**${data.subscribers}**`)
-        .addField(`↬ | Channel Views`, `**${data.views}**`)
-        .addField(`↬ | Channel Date`, `**${data.joined}**`)
-        .addField(`↬ | Channel URL`, `**${data.url}**`)
-        .addField(`↬ | Channel Description`, `**${data.description}**`)
-  message.channel.send({embed});
+var figlet = require('figlet');
+client.on('message', edward => {
+    var commandedward = "asc";
+    if (edward.content.startsWith(prefix + commandedward)) {
+    if (!edward.channel.guild) return;
+    var argsedward = edward.content.split(" ").slice(1).join(" ");
+    if (!argsedward) return edward.channel.send(`**Hey There , Type SomeThing to ASCII** 🌦.`);
+figlet(argsedward, function(err, dataed) {
+    if (err) {
+        edward.channel.send(`\`\`\`apache\nErr; ${err}\`\`\``);
+        }
+    var edwardhere = "";
+    var edwardem = new Discord.RichEmbed()
+    .setColor(edward.member.displayHexColor || "36393e")
+    .setAuthor(`${commandedward} Service;`,edward.author.avatarURL || edward.author.defaultAvatarURL)
+    .setDescription(`|| ------------------------------------------------------------------- ||\`\`\`fix\n${dataed} ${edwardhere}\`\`\``)
+    .setThumbnail(edward.guild.iconURL || edward.author.displayAvatarURL)
+    .setTimestamp()
+    .setFooter(client.user.username,client.user.avatarURL || client.user.defaultAvatarURL);
+if (argsedward.length <= 6){
+    edward.channel.send(edwardem);
+        }
+if (argsedward.length >= 7){
+    edward.channel.send(`\`\`\`fix\n${dataed}\`\`\``);
+     }
  
-    })
-}
-});
-
+})}});
 
 //////////////////
 client.login(process.env.SYSTEM);
