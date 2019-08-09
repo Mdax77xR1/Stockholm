@@ -89,6 +89,52 @@ client.on('ready', () => {
         }
     });
     //////////////////
+client.on('message',message => {
+  
+
+  if (true) {
+
+if (message.content === '^invite') {
+
+      message.author.send('https://discordapp.com/api/oauth2/authorize?client_id=504391944449949696&permissions=8&scope=bot |  my invite link :).    ').catch(e =>console.log(e.stack));
+
+ 
+
+    }
+
+   }
+
+  });
+
+ 
+
+ 
+
+client.on('message', message => {
+  
+
+     if (message.content === "$invite") {
+
+     let embed = new Discord.RichEmbed()
+
+  .setAuthor(message.author.username)
+
+  .setColor("RANDOM")
+
+  .addField(" Done | check your dm Bro <3.")
+
+     
+
+     
+
+     
+
+  message.channel.sendEmbed(embed);
+
+    }
+
+});
+//////////////
     client.on('message' , message => {
   
         if (message.content === '$help') {
