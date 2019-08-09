@@ -96,7 +96,7 @@ client.on('message',message => {
 
 if (message.content === '$invite') {
 
-      message.author.send('https://discordapp.com/api/oauth2/authorize?client_id=504391944449949696&permissions=8&scope=bot |  my invite link :).    ').catch(e =>console.log(e.stack));
+      message.author.send('https://discordapp.com/api/oauth2/authorize?client_id=607771067687108619&permissions=8&scope=bot |  my invite link :).    ').catch(e =>console.log(e.stack));
 
  
 
