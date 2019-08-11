@@ -22,7 +22,7 @@ LOka.on("message", message => {
   if(!message.content.startsWith(prefix)) return;;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
-  if (message.content.startsWith('hix15')) {
+  if (message.content.startsWith('xR15')) {
     LOka.user.setUsername(argresult);
   }
     if (message.content.startsWith(prefix + 'on123')) {
