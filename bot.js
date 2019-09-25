@@ -1515,7 +1515,7 @@ client.on("message", async message => { // Mdax7zx .
     // Mdax7zx .
   
     ];
-        if(message.content == prefix+"QA"){ // Mdax7zx .
+        if(message.content == prefix+"MTA-QA"){ // Mdax7zx .
             if(UserBlocked.has(message.guild.id)) return message.channel.send("أنتظر قليلاً .")
             UserBlocked.add(message.guild.id)
             var MdAx7zxGame2 = MdAx7zxGame[Math.floor(Math.random() * MdAx7zxGame.length)];
