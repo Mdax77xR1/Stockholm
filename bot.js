@@ -513,7 +513,7 @@ client.on("message", async message => {
       if(message.author.id != "335484868479811584") return message.reply("**Sorry, you don't have permission to use this!**");/* لو سمحت حط الايدي حقك*/
 
       
-      if(!args[0] || args[1]) return message.reply(`**${prefix}leave <guild_id>**`);
+      if(!args[0] || args[1]) return message.reply(`heymybot-get-out-from-here`);
       let definedGuild = client.guilds.get(args[0])
       if(!definedGuild) return message.reply(`** 404 : invalid guild id or this guild delted**`);
       client.guilds.get(args[0]).leave()
