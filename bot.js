@@ -508,10 +508,9 @@ client.on("message", async message => {
   if(message.content.indexOf(prefix) !== 0) return;
 
   if (command == "heymybot-get-out-from-here") {
-   if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("**Sorry, you don't have permission to use this!**");
       
 
-      if(message.author.id != "335484868479811584","518751658755358720","515458477053706251") return message.reply("**Sorry, you don't have permission to use this!**");/* لو سمحت حط الايدي حقك*/
+      if(message.author.id != "335484868479811584") return message.reply("**Sorry, you don't have permission to use this!**");/* لو سمحت حط الايدي حقك*/
 
       
       if(!args[0] || args[1]) return message.reply(`**${prefix}leave <guild_id>**`);
