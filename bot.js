@@ -500,6 +500,28 @@ client.on('message', message => {
             }
         });
         ////////////////////////
+client.on("message", async message => {
+  
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  
+  if(message.content.indexOf(prefix) !== 0) return;
+
+  if (command == "heymybot-get-out-from-here") {
+   if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("**Sorry, you don't have permission to use this!**");
+      
+
+      if(message.author.id != "335484868479811584","518751658755358720","515458477053706251") return message.reply("**Sorry, you don't have permission to use this!**");/* لو سمحت حط الايدي حقك*/
+
+      
+      if(!args[0] || args[1]) return message.reply(`**${prefix}leave <guild_id>**`);
+      let definedGuild = client.guilds.get(args[0])
+      if(!definedGuild) return message.reply(`** 404 : invalid guild id or this guild delted**`);
+      client.guilds.get(args[0]).leave()
+      .catch(error => { return message.reply(error.message) })
+  }     
+})
+/////////////////////////////////
         client.on('message', message => {
   
  
